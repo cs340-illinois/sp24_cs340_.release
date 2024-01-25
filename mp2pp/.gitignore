@@ -1,0 +1,6 @@
+png-dimensions
+test
+*.o
+*/*.o
+TEST.png
+

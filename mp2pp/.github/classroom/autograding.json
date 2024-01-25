@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "png_dimensions - 340.png",
+      "setup": "make test",
+      "run": "./test -w NoTests 'png_dimensions - 340.png'",
+      "comparison": "included",
+      "timeout": 0.5,
+      "points": 1
+    },
+    {
+      "name": "png_dimensions - i.png",
+      "setup": "make test",
+      "run": "./test -w NoTests 'png_dimensions - i.png'",
+      "comparison": "included",
+      "timeout": 0.1,
+      "points": 1
+    },
+    {
+      "name": "png_dimensions - pogo-19571113.png",
+      "setup": "make test",
+      "run": "./test -w NoTests 'png_dimensions - pogo-19571113.png'",
+      "comparison": "included",
+      "timeout": 0.1,
+      "points": 1
+    }
+  ]
+}
