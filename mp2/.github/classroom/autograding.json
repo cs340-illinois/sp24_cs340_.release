@@ -1,6 +1,14 @@
 {
   "tests": [
     {
+      "name": "png_extractGIF - GIF extracted with correct file size (waf)",
+      "setup": "make test",
+      "run": "./test -w NoTests 'png_extractGIF - GIF extracted with correct file size (waf)'",
+      "comparison": "included",
+      "timeout": 0.5,
+      "points": 10
+    },
+    {
       "name": "png_extractGIF - GIF extracted successfully and content correct (natalia)",
       "setup": "make test",
       "run": "./test -w NoTests 'png_extractGIF - GIF extracted successfully and content correct (natalia)'",
