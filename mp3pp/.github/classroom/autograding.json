@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "you vs. libc",
+      "setup": "make test",
+      "run": "./test -w NoTests 'you vs. libc'",
+      "comparison": "included",
+      "timeout": 1.0,
+      "points": 100
+    }
+  ]
+}
