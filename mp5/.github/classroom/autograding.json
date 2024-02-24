@@ -1,0 +1,268 @@
+{"tests":[
+{"name":"part_1 - test_wallet_imports"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_wallet_imports"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_wallet_server_imports"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_wallet_server_imports"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_initially_empty"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_initially_empty"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_two_wallets_empty"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_two_wallets_empty"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_change_changes"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_change_changes"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_change_return"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_change_return"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_negative_changes"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_negative_changes"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_1 - test_many_changes"
+,"setup":""
+,"run":"pytest test_part_1.py -k test_many_changes"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_blocking"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_blocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_nonblocking"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_nonblocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_mix"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_mix"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_not_busy_wait"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_not_busy_wait"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_wait_wakeup"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_wait_wakeup"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_work_while_waiting"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_work_while_waiting"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_multi_wallet_nonblocking"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_multi_wallet_nonblocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_2 - test_multi_wallet_blocking"
+,"setup":""
+,"run":"pytest test_part_2.py -k test_multi_wallet_blocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_atomic"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_atomic"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_nothing"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_nothing"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_just_add"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_just_add"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_blocking"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_blocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_retval"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_retval"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_scatter"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_scatter"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_gather"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_gather"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_3 - test_chain"
+,"setup":""
+,"run":"pytest test_part_3.py -k test_chain"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_empty"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_empty"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_one_resource"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_one_resource"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_blocking"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_blocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_nonblocking"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_nonblocking"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_wait_wakeup"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_wait_wakeup"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_many_connections"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_many_connections"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_transaction"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_transaction"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"part_4 - test_exit"
+,"setup":""
+,"run":"pytest test_part_4.py -k test_exit"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - hedgehog-simple.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_hedgehog"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - hedgehog-rat.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_rat"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - ping-pong.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_ping_pong"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - ping-pong-transaction.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_ping_pong_transaction"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - degree.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_degree"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+},
+{"name":"provided_files - gacha.py"
+,"setup":""
+,"run":"pytest test_provided_files.py -k test_gacha"
+,"comparison":"included"
+,"timeout":0.1
+,"points":1
+}
+]}
