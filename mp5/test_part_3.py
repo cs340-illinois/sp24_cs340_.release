@@ -145,15 +145,17 @@ def case_chain():
     if w.get('h') != 0: return 'Ring of transactions failed to update resources correctly'
 
 
-def run_one_test(fn, should_block=False, args=(), timeout=0.05):
+def wrapper(q, fn, args):
+    try:
+        q.put(fn(*args))
+    except BaseException as ex:
+        q.put(ex)
+
+
+def run_one_test(fn, should_block=False, args=(), timeout=0.2):
     from multiprocessing import Queue, Process
     q = Queue()
-    def wrapper(q):
-        try:
-            q.put(fn(*args))
-        except BaseException as ex:
-            q.put(ex)
-    p = Process(target=wrapper, args=(q,))
+    p = Process(target=wrapper, args=(q, fn, args))
     p.start()
     p.join(timeout)
     msg = [q.get()] if not q.empty() else []

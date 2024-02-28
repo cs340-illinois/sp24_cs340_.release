@@ -35,12 +35,17 @@ def case_mix():
     if w.get('thing_1') != 2: return 'wrong final value'
     if w.get('thing_2') != 2: return 'wrong final value'
 
+import os
 def test_not_busy_wait():
-    assert not run_one_test(case_not_busy_wait, should_block=True, timeout=2)
+    if os.name != "posix":
+        import pytest
+        pytest.skip("cannot test busy-wait on your operating system; skipping test")    
+    assert not run_one_test(case_not_busy_wait, should_block=True, timeout=5)
+
 
 def case_not_busy_wait():
-    from wallet import Wallet
     import resource
+    from wallet import Wallet
     resource.setrlimit(resource.RLIMIT_CPU, (1,1))
     w = Wallet()
     w.change('deficit',5)
@@ -48,7 +53,7 @@ def case_not_busy_wait():
     assert not "unreachable"
     
 def test_wait_wakeup():
-    assert not run_one_test(case_wait_wakeup, timeout=0.02)
+    assert not run_one_test(case_wait_wakeup, timeout=0.7)
 
 def case_wait_wakeup():
     from wallet import Wallet
@@ -77,7 +82,7 @@ def case_wait_wakeup():
     if len(messages): return messages[0]
 
 def test_work_while_waiting():
-    assert not run_one_test(case_work_while_waiting, timeout=0.02)
+    assert not run_one_test(case_work_while_waiting, timeout=0.5)
 
 def case_work_while_waiting():
     from wallet import Wallet
@@ -129,7 +134,7 @@ def case_multi_wallet_nonblocking():
         return 'Wallet 2 ended with wrong value'
 
 def test_multi_wallet_blocking():
-    assert not run_one_test(case_multi_wallet_blocking, timeout=0.1)
+    assert not run_one_test(case_multi_wallet_blocking, timeout=1)
 
 def case_multi_wallet_blocking():
     from wallet import Wallet
@@ -167,16 +172,17 @@ def case_multi_wallet_blocking():
     if w2.get('cash') != 10: return 'Wallet 2 ends with wrong value'
 
 
+def wrapper(q, fn, args):
+    try:
+        q.put(fn(*args))
+    except BaseException as ex:
+        q.put(ex)
 
-def run_one_test(fn, should_block=False, args=(), timeout=0.05):
-    from multiprocessing import Queue, Process
+from multiprocessing import Queue, Process
+
+def run_one_test(fn, should_block=False, args=(), timeout=1):
     q = Queue()
-    def wrapper(q):
-        try:
-            q.put(fn(*args))
-        except BaseException as ex:
-            q.put(ex)
-    p = Process(target=wrapper, args=(q,))
+    p = Process(target=wrapper, args=(q, fn, args))
     p.start()
     p.join(timeout)
     msg = [q.get()] if not q.empty() else []

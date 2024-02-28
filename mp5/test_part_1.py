@@ -123,17 +123,17 @@ def test_many_changes():
 
 
 
+def wrapper(q, fn, args):
+    try:
+        q.put(fn(*args))
+    except BaseException as ex:
+        q.put(ex)
 
 
-def run_one_test(fn, should_block=False, args=(), timeout=0.05):
+def run_one_test(fn, should_block=False, args=(), timeout=0.35):
     from multiprocessing import Queue, Process
     q = Queue()
-    def wrapper(q):
-        try:
-            q.put(fn(*args))
-        except BaseException as ex:
-            q.put(ex)
-    p = Process(target=wrapper, args=(q,))
+    p = Process(target=wrapper, args=(q, fn, args))
     p.start()
     p.join(timeout)
     msg = [q.get()] if not q.empty() else []
@@ -141,6 +141,7 @@ def run_one_test(fn, should_block=False, args=(), timeout=0.05):
         msg.append('Expected to block, but did not')
     elif not should_block and p.is_alive():
         msg.append('Blocked, but should have finished in under {} seconds'.format(timeout))
+    if p.is_alive(): p.kill()
     return msg[0] if msg else None
 
 

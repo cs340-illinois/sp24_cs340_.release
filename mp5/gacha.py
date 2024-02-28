@@ -62,7 +62,7 @@ def gacha(wallet):
   
 
 if __name__ == '__main__':
-  print("gacha simulation");
+  print("gacha simulation")
   wallet = Wallet()
   t1 = threading.Thread(target=generate_primogen, args=[wallet])
   t2 = threading.Thread(target=fate, args=[wallet])

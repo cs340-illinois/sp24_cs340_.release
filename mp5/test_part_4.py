@@ -176,35 +176,52 @@ def random_port():
         s.bind(('', 0))
         return s.getsockname()[1]
 
-def run_test_with_server(fn, should_block=False, timeout=0.5, port=None):
+def run_test_with_server(fn, should_block=False, timeout=5, port=None):
     from subprocess import Popen, DEVNULL
-    from signal import SIGINT
+    import os
     import time
+    import shutil
+    try: from signal import CTRL_C_EVENT
+    except: from signal import SIGINT as CTRL_C_EVENT
     
     # start server
     if not port: port = random_port()
-    ws = Popen(["python3", "wallet-server.py",'-p',str(port)], stderr=DEVNULL, stdout=DEVNULL, stdin=DEVNULL)
+    if os.name == 'nt':
+        try: from subprocess import CREATE_NEW_PROCESS_GROUP
+        except: CREATE_NEW_PROCESS_GROUP = 0
+        if shutil.which('py'):
+            python_exe = 'py'
+        elif shutil.which('python'):
+            python_exe = 'python'
+        else:
+            python_exe = 'python3'
+        ws = Popen([python_exe, "wallet-server.py",'-p',str(port)], stderr=DEVNULL, stdout=DEVNULL, stdin=DEVNULL, creationflags=CREATE_NEW_PROCESS_GROUP)
+    else:
+        ws = Popen(["python3", "wallet-server.py",'-p',str(port)], stderr=DEVNULL, stdout=DEVNULL, stdin=DEVNULL)
     time.sleep(0.1)
     
     try: # test it
         return run_one_test(fn, should_block=should_block, args=(port,), timeout=timeout)
     finally: # close it when done
-        ws.send_signal(SIGINT)
+        ws.send_signal(CTRL_C_EVENT)
+        
         try:
-            ws.wait(timeout*2)
+            ws.wait(timeout)
         except:
             ws.kill()
         
+        
+def wrapper(q, fn, args):
+    try:
+        q.put(fn(*args))
+    except BaseException as ex:
+        q.put(ex)
+
 
 def run_one_test(fn, should_block=False, args=(), timeout=0.2):
     from multiprocessing import Queue, Process
     q = Queue()
-    def wrapper(q):
-        try:
-            q.put(fn(*args))
-        except BaseException as ex:
-            q.put(ex)
-    p = Process(target=wrapper, args=(q,))
+    p = Process(target=wrapper, args=(q, fn, args))
     p.start()
     p.join(timeout)
     msg = [q.get()] if not q.empty() else []
