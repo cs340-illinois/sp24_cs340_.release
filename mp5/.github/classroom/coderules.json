@@ -12,7 +12,7 @@
 ,"comparison":"included"
 ,"timeout":5
 ,"points":0
-}
+},
 {"name":"coding_rules - test_no_globals"
 ,"setup":""
 ,"run":"pytest test_coding_rules.py -k test_no_globals"
