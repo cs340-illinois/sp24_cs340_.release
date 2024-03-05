@@ -1,4 +1,4 @@
-name: mp6 autograding
+name: mp7 autograding
 'on':
   workflow_dispatch: {}
 jobs:
@@ -15,30 +15,30 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: cs340-illinois/sp24_cs340_.release
-        ref: mp6
+        ref: mp7
         path: release
     - name: Copy local files from release
       id: local-copy
       uses: illinois/local-copy@v1
       with:
-        src_path: release/mp6
-        dst_path: mp6
+        src_path: release/mp7
+        dst_path: mp7
         copy: '.github/classroom : .github/classroom, courses_microservice : courses_microservice, test_microservice.py : test_microservice.py'
     - name: Verify student submission
       id: verify-policy
       uses: illinois/verify-policy@v1
       with:
-        reference_files: 'release/mp6/.github/classroom : mp6/.github/classroom, release/mp6/courses_microservice : mp6/courses_microservice, release/mp6/test_microservice.py : mp6/test_microservice.py'
+        reference_files: 'release/mp7/.github/classroom : mp7/.github/classroom, release/mp7/courses_microservice : mp7/courses_microservice, release/mp7/test_microservice.py : mp7/test_microservice.py'
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - run: pip install -r mp6/requirements.txt
+    - run: pip install -r mp7/requirements.txt
     - name: Autograding
       id: autograding
       uses: illinois/autograding@v3
       with:
-        path: mp6/
+        path: mp7/
         test_suite: autograding
         step_summary: true
     - name: Generate workflow summary
