@@ -1,18 +1,4 @@
 {"tests":[
-{"name":"part_1 - test_wallet_imports"
-,"setup":""
-,"run":"pytest test_part_1.py -k test_wallet_imports"
-,"comparison":"included"
-,"timeout":5
-,"points":1
-},
-{"name":"part_1 - test_wallet_server_imports"
-,"setup":""
-,"run":"pytest test_part_1.py -k test_wallet_server_imports"
-,"comparison":"included"
-,"timeout":5
-,"points":1
-},
 {"name":"part_1 - test_initially_empty"
 ,"setup":""
 ,"run":"pytest test_part_1.py -k test_initially_empty"

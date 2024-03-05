@@ -1,24 +1,3 @@
-
-def ast_imports(file, allowed):
-    import ast
-    wast = ast.parse(open(file,'r').read())
-    for node in ast.walk(wast):
-        if isinstance(node, ast.Import):
-            for name in node.names:
-                assert name.name in allowed
-        if isinstance(node, ast.ImportFrom):
-            assert node.module in allowed
-        if isinstance(node, ast.Name):
-            assert node.id != '__import__'
-            assert 'attr' not in dir(node) or node.attr == '__import__'
-
-def test_wallet_imports():
-    ast_imports('wallet.py', ['threading'])
-
-def test_wallet_server_imports():
-    ast_imports('wallet-server.py', ['threading','socket','getopt','sys','wallet'])
-
-
 def case_initially_empty():
     from wallet import Wallet
     import random

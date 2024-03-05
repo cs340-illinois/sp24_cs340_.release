@@ -1,0 +1,23 @@
+{"tests":[
+{"name":"coding_rules - test_wallet_imports"
+,"setup":""
+,"run":"pytest test_coding_rules.py -k test_wallet_imports"
+,"comparison":"included"
+,"timeout":5
+,"points":0
+},
+{"name":"coding_rules - test_wallet_server_imports"
+,"setup":""
+,"run":"pytest test_coding_rules.py -k test_wallet_server_imports"
+,"comparison":"included"
+,"timeout":5
+,"points":0
+}
+{"name":"coding_rules - test_no_globals"
+,"setup":""
+,"run":"pytest test_coding_rules.py -k test_no_globals"
+,"comparison":"included"
+,"timeout":5
+,"points":0
+}
+]}
