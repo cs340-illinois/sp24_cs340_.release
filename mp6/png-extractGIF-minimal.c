@@ -23,7 +23,7 @@ extern const int ERROR_INVALID_CHUNK_DATA;
 extern const int ERROR_NO_UIUC_CHUNK;
 
 
-typedef struct { char *data; unsigned len; } slice;
+typedef struct { char *data; int len; } slice;
 
 slice blockWithTitle(const char *fname, const char *title) {
   slice r = {NULL, -ERROR_INVALID_FILE};
@@ -60,7 +60,7 @@ slice blockWithTitle(const char *fname, const char *title) {
 int png_extractGIF(const char *png_filename, const char *gif_filename) {
   slice r = blockWithTitle(png_filename, "uiuc");
   if (r.len < 0) return -r.len;
-  if (!r.data) return ERROR_NO_UIUC_CHUNK;
+  if (!r.data || r.len == 0) return ERROR_NO_UIUC_CHUNK;
   FILE *out = fopen(gif_filename, "w");
   if (!out) return ERROR_INVALID_PARAMS;
   if (fwrite(r.data, r.len, 1, out) != 1) {
