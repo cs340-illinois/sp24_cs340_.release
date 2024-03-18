@@ -57,7 +57,7 @@ def test_vm_no_hidden_gif():
 
 def test_vm_not_valid_png():
   test_file = open('sample/luther.gif', 'rb')
-  data = {'png': ('luther.gif', test_file.read())}
+  data = {'png': ('luther.png', test_file.read())}
   url = f"{vmHost}/extract"
 
   print(f"Sending: POST {url}")
