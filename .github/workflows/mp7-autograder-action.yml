@@ -55,6 +55,8 @@ jobs:
         points: ${{ steps.autograding.outputs.Points }}
   autograding:
     name: autograding
+    needs:
+    - pretest
     runs-on:
     - self-hosted
     - Linux
