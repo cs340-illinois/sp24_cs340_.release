@@ -1,5 +1,5 @@
-{"tests":[
-,{"name":"test_at_start_cache_is_empty"
+{"tests":
+[{"name":"test_at_start_cache_is_empty"
  ,"setup":""
  ,"run":"pytest test_weather.py -k test_at_start_cache_is_empty"
  ,"comparison":"included"
