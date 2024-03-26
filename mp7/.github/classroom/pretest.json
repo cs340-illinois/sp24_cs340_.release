@@ -1,0 +1,16 @@
+{"tests":[
+,{"name":"test_at_start_cache_is_empty"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_at_start_cache_is_empty"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":5
+ }
+,{"name":"test_cache_used"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_cache_used"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":5
+ }
+]}

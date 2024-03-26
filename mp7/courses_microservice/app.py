@@ -35,6 +35,41 @@ def csv2dict(fname, *columns):
 
 all_courses = csv2dict("courses.csv", 'Subject', 'Number')
 
+def build_reply(subject, number):
+  result = {}
+
+  # Cast `number` as an int and ensure `subject` is all caps:
+  try:
+    number = str(int(number))
+  except:
+    result["error"] = f"Course number `{number}` is not a number"
+    status_code = 404
+    return result
+  subject = subject.upper()
+
+  # A test course for the forecast unavailable states:
+  if subject == "TEST" and number == '999':
+    return TEST_999(result)
+
+  # Fetch data:
+  courses = [sec for sec in all_courses.get((subject,number), []) if sec['Start Time'] not in ('', 'ARRANGED')]
+
+  if len(courses) == 0:
+    # Provide an error:
+    result["error"] = f"No course data available for {subject} {number}"
+  else:
+    # Prefer LEC sections (for courses with discussions/labs)
+    course_lec = [sec for sec in courses if sec['Type Code'] == 'LEC']
+    if len(course_lec) > 0:
+      courses = course_lec
+
+    # Get the first result's data:
+    c = courses[0]
+    result["Start Time"] = c["Start Time"]
+    result["Days of Week"] = c["Days of Week"]
+
+  return result
+
 from flask import Flask, jsonify
 app = Flask(__name__)
 
@@ -48,35 +83,12 @@ def GET_subject_number(subject, number):
     number = str(int(number))
   except:
     result["error"] = f"Course number `{number}` is not a number"
-    status_code = 404
-    return jsonify(result), status_code
+    return jsonify(result), 404
   subject = subject.upper()
-
-  # A test course for the forecast unavailable states:
-  if subject == "TEST" and number == '999':
-    return TEST_999(result)
-
-  # Fetch data:
-  courses = [sec for sec in all_courses.get((subject,number), []) if sec['Start Time'] not in ('', 'ARRANGED')]
-
-  if len(courses) == 0:
-    # Provide an error:
-    result["error"] = f"No course data available for {subject} {number}"
-    status_code = 404
-  else:
-    # Prefer LEC sections (for courses with discussions/labs)
-    course_lec = [sec for sec in courses if sec['Type Code'] == 'LEC']
-    if len(course_lec) > 0:
-      courses = course_lec
-
-    # Get the first result's data:
-    c = courses[0]
-    result["Start Time"] = c["Start Time"]
-    result["Days of Week"] = c["Days of Week"]
-    status_code = 200
-
-  return jsonify(result), status_code
-
+  
+  result.update(build_reply(subject, number))
+  if 'error' in result: return jsonify(result), 404
+  else: return jsonify(result), 200
 
 # Special case for "TEST 999" course to always return a date/time
 # that is 6 days and 23 hours in the future for testing:
@@ -111,7 +123,7 @@ def TEST_999(result):
     result["Days of Week"] = "S"
   elif six_days_later == 6:
     result["Days of Week"] = "U"
-  return jsonify(result), 200
+  return result
 
 
 

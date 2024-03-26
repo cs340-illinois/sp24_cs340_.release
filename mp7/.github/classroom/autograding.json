@@ -1,124 +1,422 @@
-{
-  "tests": [
-    {
-      "name": "test_microservice.py - test_cache_is_empty",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_cache_is_empty",
-      "comparison": "included",
-      "timeout": 0.5,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_cache_implementation",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_cache_implementation",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_course_with_space_upper",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_course_with_space_upper",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_course_with_space_lower",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_course_with_space_lower",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_course_without_space_lower",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_course_without_space_lower",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_course_without_space_upper",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_course_without_space_upper",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_invalid_course_correct_format",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_invalid_course_correct_format",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_invalid_course_incorrect_format",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_invalid_course_incorrect_format",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_once_a_week_course_1",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_once_a_week_course_1",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_once_a_week_course_2",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_once_a_week_course_2",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_multiple_times_a_week_course_1",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_multiple_times_a_week_course_1",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_multiple_times_a_week_course_2",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_multiple_times_a_week_course_2",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_unavailable",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_unavailable",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_valid_course_case_insensitive",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_valid_course_case_insensitive",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    },
-    {
-      "name": "test_microservice.py - test_blank_course",
-      "setup": "",
-      "run": "pytest test_microservice.py -k test_blank_course",
-      "comparison": "included",
-      "timeout": 0.1,
-      "points": 1
-    }
-  ]
-}
+{"tests":
+[{"name":"test_valid_cache_implementation"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_valid_cache_implementation"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":5
+ }
+,{"name":"test_our_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_our_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":10
+ }
+,{"name":"test_invalid_course_correct_format"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_invalid_course_correct_format"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_invalid_course_incorrect_format_1"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_invalid_course_incorrect_format_1"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_invalid_course_incorrect_format_2"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_invalid_course_incorrect_format_2"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_invalid_course_incorrect_format_3"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_invalid_course_incorrect_format_3"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_invalid_course_incorrect_format_4"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_invalid_course_incorrect_format_4"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_blank_course_1"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_blank_course_1"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_blank_course_2"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_blank_course_2"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_blank_course_3"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_blank_course_3"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_101_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_101_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_101_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_101_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_101_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_101_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_101_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_101_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_101_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_101_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_105_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_105_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_105_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_105_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_105_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_105_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_105_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_105_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_105_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_105_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_107_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_107_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_107_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_107_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_107_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_107_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_107_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_107_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_107_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_107_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_124_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_124_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_124_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_124_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_124_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_124_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_CS_124_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_124_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS_124_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS_124_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs_225_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs_225_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_Cs_225_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs_225_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_Cs_225_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs_225_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_Cs_225_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs_225_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs_225_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs_225_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS_233_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS_233_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS_233_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS_233_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS_233_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS_233_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS_233_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS_233_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS_233_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS_233_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs374_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs374_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_Cs374_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs374_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs374_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs374_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs374_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs374_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_Cs374_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_Cs374_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS173_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS173_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS173_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS173_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS173_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS173_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS173_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS173_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cS173_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cS173_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cs128_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cs128_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_cs128_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cs128_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cs128_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cs128_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cs128_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cs128_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_cs128_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_cs128_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_CS340_course"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_CS340_course"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":1
+ }
+,{"name":"test_course_TEST_999_nextCourseMeeting"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_TEST_999_nextCourseMeeting"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_TEST_999_forecastTime"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_TEST_999_forecastTime"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_TEST_999_temperature"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_TEST_999_temperature"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+,{"name":"test_course_TEST_999_shortForecast"
+ ,"setup":""
+ ,"run":"pytest test_weather.py -k test_course_TEST_999_shortForecast"
+ ,"comparison":"included"
+ ,"timeout":0.5
+ ,"points":2
+ }
+]}
